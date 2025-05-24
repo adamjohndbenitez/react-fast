@@ -1,0 +1,31 @@
+PROBLEM:
+npm install
+node:internal/modules/cjs/loader:1416
+      throw e;
+      ^
+
+Error: EPERM: operation not permitted, uv_cwd
+    at process.wrappedCwd [as cwd] (node:internal/bootstrap/switches/does_own_process_state:126:28)
+    at Module._preloadModules (node:internal/modules/cjs/loader:1412:52)
+    at loadPreloadModules (node:internal/process/pre_execution:678:5)
+    at setupUserModules (node:internal/process/pre_execution:162:3)
+    at prepareExecution (node:internal/process/pre_execution:124:5)
+    at prepareMainThreadExecution (node:internal/process/pre_execution:47:3)
+    at node:internal/main/run_main_module:10:1 {
+  errno: -1,
+  code: 'EPERM',
+  syscall: 'uv_cwd'
+}
+
+Node.js v20.6.1
+
+
+
+REFERENCE:
+Installation Issue on macOS - EPERM: operation not permitted, uv_cwd
+https://kb.yworks.com/article/784/Installation-Issue-on-macOS---EPERM-operation-not-permitted-uvcwd
+
+
+
+SOLUTION:
+Open an macOS terminal, go to this directory, and npm install, that should work instead of the internal terminal of VSCode.
